@@ -58,4 +58,4 @@ function Dashboard () {
     </div>
   )
 }
-export default App;
+export default App
