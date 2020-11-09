@@ -1,8 +1,9 @@
-import React from 'react'
-import './App.css'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import SimplePoint from "./demo/drawPoint/simplePoint";
 
-function App () {
+function App() {
   return (
     <Router>
       <div>
@@ -12,6 +13,9 @@ function App () {
           </li>
           <li>
             <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/simplePoint">simplePoint</Link>
           </li>
           <li>
             <Link to="/dashboard">Dashboard</Link>
@@ -28,34 +32,33 @@ function App () {
           <Route path="/dashboard">
             <Dashboard></Dashboard>
           </Route>
+          <Route path="/simplePoint">
+            <SimplePoint></SimplePoint>
+          </Route>
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
-function Home () {
+function Home() {
   return (
     <div>
       <h2>Home</h2>
     </div>
-  )
+  );
 }
-function About () {
+function About() {
   return (
     <div>
-      <h2>
-        About
-      </h2>
+      <h2>About</h2>
     </div>
-  )
+  );
 }
-function Dashboard () {
+function Dashboard() {
   return (
     <div>
-      <h2>
-        Dashboard
-      </h2>
+      <h2>Dashboard</h2>
     </div>
-  )
+  );
 }
-export default App
+export default App;

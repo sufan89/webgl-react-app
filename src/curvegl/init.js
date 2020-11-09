@@ -11,8 +11,8 @@ const setupWebGL = (elName, opt_attribs) => {
     return null;
   }
   let canvasNode = document.createElement("canvas");
-  canvasNode.width = elNode.width;
-  canvasNode.height = elNode.height;
+  // canvasNode.width = elNode.style.width;
+  // canvasNode.height = elNode.style.height;
   elNode.appendChild(canvasNode);
   let context = create3DContext(canvasNode, opt_attribs);
   return context;
