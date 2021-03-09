@@ -55,3 +55,4 @@ _ReSharper*/
 packages/
 .idea/
 package-lock.json
+.vscode/
