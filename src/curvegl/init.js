@@ -1,4 +1,7 @@
 /**
+ * @param {string} element node name
+ * @param {Object} opt_attribs
+ * @returns {Object} webgl context
  * 初始化webgl
  */
 const setupWebGL = (elName, opt_attribs) => {
@@ -12,8 +15,8 @@ const setupWebGL = (elName, opt_attribs) => {
   }
   let canvasNode = document.createElement("canvas");
   elNode.appendChild(canvasNode);
-  canvasNode.style.width = elNode.style.width;
-  canvasNode.style.height = elNode.style.height;
+  canvasNode.width = elNode.offsetWidth;
+  canvasNode.height = elNode.offsetHeight;
   let context = create3DContext(canvasNode, opt_attribs);
   return context;
 };
@@ -60,7 +63,7 @@ const initShaders = (gl, vShader, fShader) => {
  */
 const createProgram = (gl, vshader, fshader) => {
   let vertextShader = loadShader(gl, gl.VERTEX_SHADER, vshader);
-  let fragementShader = loadShader(gl, gl.FRAGEMENT_SHADER, fshader);
+  let fragementShader = loadShader(gl, gl.FRAGMENT_SHADER, fshader);
   if (!vertextShader || !fragementShader) {
     return null;
   }
