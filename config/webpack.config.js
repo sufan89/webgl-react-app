@@ -485,6 +485,10 @@ module.exports = function (webpackEnv) {
                 "sass-loader"
               ),
             },
+            {
+              test: /\.glsl$/,
+              use: "raw-loader",
+            },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
@@ -504,25 +508,6 @@ module.exports = function (webpackEnv) {
             // ** STOP ** Are you adding a new loader?
             // Make sure to add the new loader(s) before the "file" loader.
           ],
-        },
-        {
-          test: /\.(glsl|vs|fs|vert|frag)$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: "raw-loader",
-            },
-            {
-              loader: "glslify-loader",
-              options: {
-                transform: [
-                  ["glslify-hex", { "option-1": true, "option-2": 42 }],
-                ],
-                module: true,
-              },
-            },
-          ],
-          // use: ["raw-loader", "glslify-loader"],
         },
       ],
     },
