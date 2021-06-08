@@ -74,11 +74,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserify": {
-    "transform": [
-      "glslify"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
