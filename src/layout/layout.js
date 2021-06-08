@@ -34,12 +34,24 @@ class GlLayout extends React.Component {
             {subMenuItem}
           </SubMenu>
         );
+      } else {
+        return null;
       }
     });
-    const RouteWithSubRoutes = (route) => (
-      <Route path={route.path} component={route.component} />
-    );
-    console.log(menus);
+    const routes = routers.map((route, index) => {
+      if (route.routers.length) {
+        return route.routers.map((item, routeIndex) => {
+          return (
+            <Route
+              key={index.toString() + routeIndex.toString()}
+              component={item.component}
+            ></Route>
+          );
+        });
+      } else {
+        return null;
+      }
+    });
     return (
       <Router>
         <Layout style={{ minHeight: "100vh" }}>
@@ -54,10 +66,7 @@ class GlLayout extends React.Component {
                 className="site-layout-background"
                 style={{ padding: 10, minHeight: "100vh" }}
               >
-                {/* {routers.map((route,i))=> <RouteWithSubRoutes kye={i}{...route} />)} */}
-                {routers.map((route, i) => (
-                  <RouteWithSubRoutes key={i} {...route} />
-                ))}
+                {routes}
               </div>
             </Content>
           </Layout>

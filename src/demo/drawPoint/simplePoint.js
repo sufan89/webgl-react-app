@@ -3,9 +3,6 @@ import curvegl from "../../curvegl";
 import fragementShader from "./shaders/point.frage.glsl";
 import vertextShader from "./shaders/point.vert.glsl";
 class SimplePoint extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     const gl = curvegl.setupWebGL("curvegl");
     curvegl.initShaders(gl, vertextShader, fragementShader);
