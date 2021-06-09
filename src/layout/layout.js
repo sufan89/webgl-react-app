@@ -53,7 +53,6 @@ class GlLayout extends React.Component {
         return null;
       }
     });
-    console.log(routes);
     return (
       <Router>
         <Layout style={{ minHeight: "100vh" }}>

@@ -1,5 +1,6 @@
 import simplePoint from "../demo/drawPoint/simplePoint";
 import clickAddPoint from "../demo/clickAddPoint/clickAddPoint";
+import coloredPoint from "../demo/coloredPoint/coloredPoint";
 const routers = [
   {
     path: "/simple",
@@ -14,6 +15,11 @@ const routers = [
         name: "点击绘制点",
         path: "/clickAddPoint",
         component: clickAddPoint,
+      },
+      {
+        name: "点击绘制多颜色点",
+        path: "/coloredPoint",
+        component: coloredPoint,
       },
     ],
   },
