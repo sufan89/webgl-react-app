@@ -45,6 +45,7 @@ class GlLayout extends React.Component {
             <Route
               key={index.toString() + routeIndex.toString()}
               component={item.component}
+              path={item.path}
             ></Route>
           );
         });
@@ -52,6 +53,7 @@ class GlLayout extends React.Component {
         return null;
       }
     });
+    console.log(routes);
     return (
       <Router>
         <Layout style={{ minHeight: "100vh" }}>
