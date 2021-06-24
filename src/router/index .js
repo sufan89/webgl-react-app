@@ -2,6 +2,7 @@ import simplePoint from "../demo/drawPoint/simplePoint";
 import clickAddPoint from "../demo/clickAddPoint/clickAddPoint";
 import coloredPoint from "../demo/coloredPoint/coloredPoint";
 import drawTriangle from "../demo/drawTriangle/drawTriangle";
+import drawMultiPoint from "../demo/drawMultiPoint/drawMultiPoint";
 const routers = [
   {
     path: "/simple",
@@ -26,6 +27,11 @@ const routers = [
         name: "绘制简单三角形",
         path: "/drawTriangle",
         component: drawTriangle,
+      },
+      {
+        name: "绘制多点",
+        path: "/drawMultiPoint",
+        component: drawMultiPoint,
       },
     ],
   },
